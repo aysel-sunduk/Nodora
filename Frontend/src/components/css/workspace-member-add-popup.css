@@ -1,0 +1,153 @@
+/* Workspace Member Add Popup Stilleri */
+.member-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.member-add-popup {
+    background: var(--card-bg-light);
+    border-radius: 12px;
+    width: 400px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--card-border-light);
+}
+
+[data-theme="dark"] .member-add-popup {
+    background: var(--card-bg-dark);
+    border-color: var(--card-border-dark);
+}
+
+.member-add-popup h2 {
+    margin: 0;
+    padding: 20px;
+    font-size: 1.25rem;
+    color: var(--text-color-light);
+    font-weight: 600;
+    border-bottom: 1px solid var(--card-border-light);
+    background-color: transparent;
+}
+
+[data-theme="dark"] .member-add-popup h2 {
+    color: var(--text-color-dark);
+    border-color: var(--card-border-dark);
+}
+
+.member-form-group {
+    padding: 20px;
+}
+
+.member-form-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--card-border-light);
+    border-radius: 6px;
+    font-size: 0.95rem;
+    background-color: var(--card-bg-light);
+    color: var(--text-color-light);
+    transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .member-form-input {
+    border-color: var(--card-border-dark);
+    background-color: var(--card-bg-dark);
+    color: var(--text-color-dark);
+}
+
+.member-form-input:focus {
+    outline: none;
+    border-color: var(--add-card-icon-light);
+    box-shadow: 0 0 0 2px rgba(110, 69, 226, 0.2);
+}
+
+[data-theme="dark"] .member-form-input:focus {
+    border-color: var(--add-card-icon-dark);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+}
+
+.member-form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 16px 20px;
+    background-color: var(--add-card-bg-light);
+    border-top: 1px solid var(--card-border-light);
+}
+
+[data-theme="dark"] .member-form-actions {
+    background-color: var(--add-card-bg-dark);
+    border-color: var(--card-border-dark);
+}
+
+.member-cancel-btn {
+    padding: 8px 16px;
+    background-color: var(--add-card-bg-light);
+    color: var(--text-color-light);
+    border: 1px solid var(--card-border-light);
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .member-cancel-btn {
+    background-color: var(--add-card-bg-dark);
+    color: var(--text-color-dark);
+    border-color: var(--card-border-dark);
+}
+
+.member-cancel-btn:hover {
+    background-color: var(--add-card-hover-bg-light);
+}
+
+[data-theme="dark"] .member-cancel-btn:hover {
+    background-color: var(--add-card-hover-bg-dark);
+}
+
+.member-submit-btn {
+    padding: 8px 16px;
+    background: var(--add-card-icon-light);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .member-submit-btn {
+    background: var(--add-card-icon-dark);
+}
+
+.member-submit-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.member-submit-btn:disabled {
+    background-color: #a0aec0;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.member-error-message {
+    color: #e53e3e;
+    font-size: 0.85rem;
+    margin-top: 8px;
+    padding: 0 20px;
+}
+
+[data-theme="dark"] .member-error-message {
+    color: #fc8181;
+}

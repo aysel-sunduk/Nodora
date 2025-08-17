@@ -1,0 +1,285 @@
+/* Genel Ayarlar ve Tema Değişkenleri */
+:root {
+    /* Açık Tema (Varsayılan) */
+    --bg-color-light: linear-gradient(315deg, #6e45e2, #89d4cf, #6e45e2, #89d4cf, #6e45e2);
+    --text-color-light: #2c3e50;
+    --card-bg-light: rgba(255, 255, 255, 0.85);
+    --card-bg-hover-light: rgba(255, 255, 255, 0.95);
+    --card-border-light: rgba(255, 255, 255, 0.2);
+    --add-card-bg-light: rgba(255, 255, 255, 0.7);
+    --add-card-border-light: rgba(255, 255, 255, 0.5);
+    --add-card-hover-bg-light: rgba(255, 255, 255, 0.85);
+    --add-card-icon-light: #6e45e2;
+    --header-text-color-light: #fff;
+}
+
+/* Koyu Tema Değişkenleri */
+[data-theme="dark"] {
+    --bg-color-dark: linear-gradient(315deg, #1a237e, #283593, #1a237e, #283593, #1a237e);
+    --text-color-dark: #ecf0f1;
+    --card-bg-dark: rgba(44, 62, 80, 0.85);
+    --card-bg-hover-dark: rgba(52, 73, 94, 0.95);
+    --card-border-dark: rgba(44, 62, 80, 0.4);
+    --add-card-bg-dark: rgba(44, 62, 80, 0.7);
+    --add-card-border-dark: rgba(44, 62, 80, 0.5);
+    --add-card-hover-bg-dark: rgba(52, 73, 94, 0.85);
+    --add-card-icon-dark: #fff;
+    --header-text-color-dark: #ecf0f1;
+}
+
+/* WORKSPACE CONTAINER */
+.workspace-container {
+    display: flex;
+    min-height: 100vh;
+    background: var(--bg-color-light);
+    /* Açık tema arka planı */
+    animation: gradientFlow 16s ease infinite;
+    background-size: 300% 300%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Koyu tema aktif olduğunda arka planı değiştir */
+[data-theme="dark"] .workspace-container {
+    background: var(--bg-color-dark);
+}
+
+.workspace-container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 60%);
+    animation: rotateGradient 20s linear infinite;
+    pointer-events: none;
+}
+
+/* Koyu tema için ::before pseudo-elementini güncelliyoruz */
+[data-theme="dark"] .workspace-container::before {
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 60%);
+}
+
+
+@keyframes gradientFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes rotateGradient {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.workspace-main-content {
+    flex: 1;
+    padding: 2rem 5rem;
+    overflow-y: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.workspace-name {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--header-text-color-light);
+    font-size: 1.8rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .workspace-name {
+    color: var(--header-text-color-dark);
+    text-shadow: none;
+}
+
+.boards-grid,
+.workspaces-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.board-card,
+.workspace-card {
+    background-color: var(--card-bg-light);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--card-border-light);
+    cursor: pointer;
+}
+
+[data-theme="dark"] .board-card,
+[data-theme="dark"] .workspace-card {
+    background-color: var(--card-bg-dark);
+    border: 1px solid var(--card-border-dark);
+}
+
+.board-card:hover,
+.workspace-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    background-color: var(--card-bg-hover-light);
+}
+
+[data-theme="dark"] .board-card:hover,
+[data-theme="dark"] .workspace-card:hover {
+    background-color: var(--card-bg-hover-dark);
+}
+
+.board-title,
+.workspace-card h3 {
+    font-size: 1rem;
+    color: var(--text-color-light);
+    text-align: center;
+    font-weight: 500;
+}
+
+[data-theme="dark"] .board-title,
+[data-theme="dark"] .workspace-card h3 {
+    color: var(--text-color-dark);
+}
+
+.workspace-card p {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    margin: 0;
+    text-align: center;
+}
+
+.add-board,
+.add-workspace {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color-light);
+    border: 2px dashed var(--add-card-border-light);
+    background-color: var(--add-card-bg-light);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+[data-theme="dark"] .add-board,
+[data-theme="dark"] .add-workspace {
+    color: var(--text-color-dark);
+    border: 2px dashed var(--add-card-border-dark);
+    background-color: var(--add-card-bg-dark);
+}
+
+.add-board:hover,
+.add-workspace:hover {
+    background-color: var(--add-card-hover-bg-light);
+
+}
+
+[data-theme="dark"] .add-board:hover,
+[data-theme="dark"] .add-workspace:hover {
+    background-color: var(--add-card-hover-bg-dark);
+    border-color: rgba(44, 62, 80, 0.8);
+}
+
+.add-board svg,
+.add-workspace svg {
+    margin-bottom: 0.5rem;
+    color: var(--add-card-icon-light);
+}
+
+[data-theme="dark"] .add-board svg,
+[data-theme="dark"] .add-workspace svg {
+    color: var(--add-card-icon-dark);
+}
+
+.workspace-view h2 {
+    color: var(--header-text-color-light);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .workspace-view h2 {
+    color: var(--header-text-color-dark);
+    text-shadow: none;
+}
+
+.workspace-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.add-member-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.add-member-btn:hover {
+    background-color: #45a049;
+}
+
+/* src/components/css/workspace.css - Eklenecek yeni stiller */
+
+.workspace-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    /* Diğer stiller... */
+}
+
+.workspace-actions {
+    display: flex;
+    gap: 10px;
+    /* Butonlar arasına boşluk bırakır */
+    align-items: center;
+}
+
+.view-members-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 15px;
+    background-color: #6c757d;
+    /* Koyu gri veya başka bir renk seçilebilir */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.view-members-btn:hover {
+    background-color: #5a6268;
+}

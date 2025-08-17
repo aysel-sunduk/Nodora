@@ -1,0 +1,255 @@
+/* src/components/css/BoardPage.css */
+
+/* BoardPage ana konteyneri */
+.board-page {
+    padding: 20px;
+    min-height: 100vh;
+    /* Panonun modern arkaplanı */
+    background: linear-gradient(135deg,
+            rgba(0, 121, 191, 0.9) 0%,
+            rgba(80, 103, 197, 0.9) 50%,
+            rgba(56, 134, 213, 0.9) 100%),
+        url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+    background-blend-mode: overlay;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    /* padding'in toplam boyuta dahil olması için */
+    display: flex;
+    flex-direction: column;
+}
+
+.board-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 50%,
+            rgba(255, 255, 255, 0.1) 0%,
+            rgba(255, 255, 255, 0) 50%);
+    z-index: 0;
+}
+
+/* Header bölümü - Butonları sağa hizalar ve şeffaflık efekti ekler */
+.board-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.2);
+    /* Daha şeffaf bir arka plan */
+    backdrop-filter: blur(5px);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.board-header h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Butonları içeren yeni div - `board-actions` */
+.board-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Çalışma Alanlarına Dön ve Üye Ekle butonları için ortak stiller */
+.return-button,
+.add-member-button {
+    background-color: rgba(255, 255, 255, 0.25);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.return-button:hover,
+.add-member-button:hover {
+    background-color: rgba(255, 255, 255, 0.35);
+    transform: translateY(-1px);
+}
+
+/* Liste konteyneri */
+.lists-container {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 10px;
+    overflow-x: auto;
+    flex: 1;
+    /* Kontainerın esnek olmasını sağlar */
+    height: calc(100vh - 120px);
+    position: relative;
+    z-index: 1;
+}
+
+/* Modern scrollbar */
+.lists-container::-webkit-scrollbar {
+    height: 10px;
+}
+
+.lists-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.lists-container::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+.lists-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* Liste konteyneri ve ekleme formu stilleri */
+.list-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-width: 272px;
+    /* Liste genişliğini korur */
+}
+
+.list-container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+}
+
+.add-list-container {
+    background-color: rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.add-list-container:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.add-list-button {
+    width: 100%;
+    background: none;
+    border: none;
+    color: rgb(34, 27, 27);
+    padding: 12px 16px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+}
+
+.add-list-button:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.add-list-form {
+    padding: 12px;
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+}
+
+.add-list-form input {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+}
+
+.add-list-form input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(90, 172, 68, 0.5);
+}
+
+.form-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.add-button {
+    background-color: #5aac44;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.add-button:hover {
+    background-color: #4d9938;
+    transform: translateY(-1px);
+}
+
+.cancel-button {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.2s ease;
+}
+
+.cancel-button:hover {
+    color: white;
+    transform: scale(1.1);
+}
+
+/* src/components/css/BoardPage.css */
+
+.board-actions {
+    display: flex;
+    gap: 10px;
+    /* Butonlar arasına boşluk bırakır */
+}
+
+.view-members-button {
+    padding: 8px 16px;
+    background-color: #3f51b5;
+    /* Örnek bir renk */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.view-members-button:hover {
+    background-color: #303f9f;
+}

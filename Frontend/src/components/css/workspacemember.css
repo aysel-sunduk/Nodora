@@ -1,0 +1,192 @@
+/* workspaceMember.css */
+
+/* ======================================= */
+/* RENK TEMASI DEĞİŞKENLERİ */
+/* ======================================= */
+:root {
+    /* Açık Tema */
+    --text-color-light: #2c3e50;
+    --card-bg-light: rgba(255, 255, 255, 0.85);
+    --card-bg-hover-light: rgba(255, 255, 255, 0.95);
+    --card-border-light: rgba(255, 255, 255, 0.2);
+    --member-role-owner: #e74c3c;
+    --member-role-lead: #3498db;
+    --member-role-member: #2ecc71;
+}
+
+[data-theme="dark"] {
+    /* Koyu Tema */
+    --text-color-dark: #ecf0f1;
+    --card-bg-dark: rgba(44, 62, 80, 0.85);
+    --card-bg-hover-dark: rgba(52, 73, 94, 0.95);
+    --card-border-dark: rgba(44, 62, 80, 0.4);
+    --member-role-owner: #e74c3c;
+    --member-role-lead: #3498db;
+    --member-role-member: #2ecc71;
+}
+
+/* ======================================= */
+/* ÜYE LİSTESİ KONTEYNERİ VE DÜZENİ */
+/* ======================================= */
+.workspace-members-container {
+    padding: 40px;
+    max-width: 800px;
+    width: 100%;
+    background-color: var(--card-bg-light);
+    color: var(--text-color-light);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--card-border-light);
+    box-sizing: border-box;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+[data-theme="dark"] .workspace-members-container {
+    background-color: var(--card-bg-dark);
+    color: var(--text-color-dark);
+    border: 1px solid var(--card-border-dark);
+}
+
+/* Üye Listesi Başlık ve Buton Düzeni */
+.member-page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.member-page-header .page-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--text-color-light);
+}
+
+[data-theme="dark"] .member-page-header .page-title {
+    color: var(--text-color-dark);
+}
+
+.workspace-id {
+    font-size: 1rem;
+    color: #7f8c8d;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+/* Geri Dön Butonu */
+.back-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 15px;
+    background-color: var(--card-bg-light);
+    border: 1px solid var(--card-border-light);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--text-color-light);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.back-button:hover {
+    background-color: var(--card-bg-hover-light);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] .back-button {
+    background-color: var(--card-bg-dark);
+    border-color: var(--card-border-dark);
+    color: var(--text-color-dark);
+}
+
+[data-theme="dark"] .back-button:hover {
+    background-color: var(--card-bg-hover-dark);
+}
+
+/* Üye Kartı Stilleri */
+.member-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.member-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 24px;
+    background-color: var(--card-bg-light);
+    border-radius: 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.member-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] .member-card {
+    background-color: var(--card-bg-dark);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.member-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.member-info .email {
+    font-weight: 600;
+    color: var(--text-color-light);
+    font-size: 1.1rem;
+}
+
+[data-theme="dark"] .member-info .email {
+    color: var(--text-color-dark);
+}
+
+.member-info .name {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+}
+
+.member-role {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.member-role.owner {
+    background-color: var(--member-role-owner);
+}
+.member-role.lead {
+    background-color: var(--member-role-lead);
+}
+.member-role.member {
+    background-color: var(--member-role-member);
+}
+
+/* Mobil görünüm için responsive ayarlar */
+@media (max-width: 768px) {
+    .workspace-members-container {
+        padding: 20px;
+    }
+    .member-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}

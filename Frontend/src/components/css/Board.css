@@ -1,0 +1,98 @@
+/* board.css (Güncellenmiş Kısım) */
+.board-list {
+    padding: 10px;
+    width: 100%;
+    /* Arka plan rengini temadan al */
+    background-color: transparent;
+}
+
+.boards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+/* Pano kartları için genel stil */
+.board-card {
+    background-color: var(--card-bg-light);
+    /* Temadan gelen arkaplan rengi */
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--card-border-light);
+    cursor: pointer;
+    text-align: center;
+}
+
+/* Koyu tema için pano kartı stilleri */
+[data-theme="dark"] .board-card {
+    background-color: var(--card-bg-dark);
+    /* Koyu temadan gelen arkaplan */
+    border: 1px solid var(--card-border-dark);
+}
+
+.board-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    background-color: var(--card-bg-hover-light);
+    /* Temadan gelen hover rengi */
+}
+
+[data-theme="dark"] .board-card:hover {
+    background-color: var(--card-bg-hover-dark);
+}
+
+.board-card h3 {
+    font-size: 1rem;
+    color: var(--text-color-light);
+    /* Temadan gelen metin rengi */
+    margin: 0;
+    font-weight: 500;
+}
+
+[data-theme="dark"] .board-card h3 {
+    color: var(--text-color-dark);
+}
+
+/* "Pano Ekle" kartı için stil */
+.add-board-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color-light);
+    border: 2px dashed var(--add-card-border-light);
+    background-color: var(--add-card-bg-light);
+    transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .add-board-card {
+    color: var(--text-color-dark);
+    border: 2px dashed var(--add-card-border-dark);
+    background-color: var(--add-card-bg-dark);
+}
+
+.add-board-card:hover {
+    background-color: var(--add-card-hover-bg-light);
+}
+
+[data-theme="dark"] .add-board-card:hover {
+    background-color: var(--add-card-hover-bg-dark);
+    border-color: rgba(44, 62, 80, 0.8);
+}
+
+.add-board-card svg {
+    margin-bottom: 0.5rem;
+    color: var(--add-card-icon-light);
+}
+
+[data-theme="dark"] .add-board-card svg {
+    color: var(--add-card-icon-dark);
+}

@@ -1,0 +1,347 @@
+/* WorkspaceSidebar.css */
+
+/* Genel Sidebar Stili - Açık Tema (Varsayılan) */
+.sidebar {
+  width: 280px;
+  height: 100vh;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  background-color: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 0 16px 16px 0;
+  color: #333333;
+}
+
+/* Koyu Tema Stilleri */
+.sidebar.dark {
+  background-color: rgba(100, 100, 100, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(195, 196, 206, 0.18);
+  color: #ffffff;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+/* Koyu Tema Header */
+.sidebar.dark .header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Logo */
+.logo-container {
+  width: 100px;
+  height: 100px;
+  background-color: #d4e7f6;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Koyu Tema Logo */
+.sidebar.dark .logo-container {
+  background-color: #3a2a7a;
+}
+
+.logo-container:hover {
+  transform: rotate(360deg);
+}
+
+.app-logo {
+  width: 150px;
+  height: auto;
+}
+
+.header-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.header-button {
+  background: none;
+  border: none;
+  color: rgba(51, 51, 51, 0.8);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.header-button:hover {
+  color: #1a202c;
+  transform: scale(1.1);
+}
+
+/* Koyu Tema Butonlar */
+.sidebar.dark .header-button {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.sidebar.dark .header-button:hover {
+  color: #ffffff;
+}
+
+/* Bölüm Başlıkları */
+.section-title {
+  font-weight: 600;
+  margin: 10px 0;
+  padding: 8px 5px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.section-title:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* Koyu Tema Bölüm Başlıkları */
+.sidebar.dark .section-title:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* "Yeni Çalışma Alanı" Butonu */
+.add-button {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  background: rgba(255, 255, 255, 0.6);
+  color: #333333;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  transition: all 0.2s;
+}
+
+.add-button:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+/* Koyu Tema Butonları */
+.sidebar.dark .add-button {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+.sidebar.dark .add-button:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Çalışma Alanları Listesi */
+.workspaces-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.workspace-item {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 6px;
+  overflow: hidden;
+  transition: all 0.2s;
+}
+
+.workspace-header {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.workspace-header:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.workspace-header.active {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+/* Koyu Tema Çalışma Alanı Öğeleri */
+.sidebar.dark .workspace-item {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.sidebar.dark .workspace-header:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar.dark .workspace-header.active {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.workspace-title {
+  flex-grow: 1;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: rgba(45, 55, 72, 0.6);
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.2s;
+  padding: 2px;
+}
+
+.workspace-header:hover .delete-btn {
+  opacity: 1;
+}
+
+.delete-btn:hover {
+  color: #1a202c;
+}
+
+/* Koyu Tema Silme Butonu */
+.sidebar.dark .delete-btn {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.sidebar.dark .delete-btn:hover {
+  color: #ffffff;
+}
+
+/* Panolar Alanı */
+.boards-container {
+  padding: 5px 15px 10px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* Koyu Tema Panolar Alanı */
+.sidebar.dark .boards-container {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.board-item {
+  padding: 8px 10px;
+  margin-bottom: 5px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.9rem;
+}
+
+.board-item:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+/* Koyu Tema Pano Öğeleri */
+.sidebar.dark .board-item {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.sidebar.dark .board-item:hover {
+  background: rgba(0, 0, 0, 0.35);
+}
+
+/* "Yeni Pano Ekle" Butonu */
+.add-board-btn {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  background: rgba(255, 255, 255, 0.6);
+  color: #333333;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+}
+
+.add-board-btn:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+/* Koyu Tema "Yeni Pano Ekle" Butonu */
+.sidebar.dark .add-board-btn {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+.sidebar.dark .add-board-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Modal Stilleri */
+.custom-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.custom-modal {
+  background: #222;
+  color: #fff;
+  padding: 32px 24px;
+  border-radius: 12px;
+  min-width: 300px;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.modal-actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.modal-ok {
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  padding: 8px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.modal-ok:hover {
+  background: #1251a3;
+}
+
+.modal-cancel {
+  background: #eee;
+  color: #222;
+  border: none;
+  padding: 8px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.modal-cancel:hover {
+  background: #ccc;
+}

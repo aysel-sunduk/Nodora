@@ -1,0 +1,310 @@
+/* src/components/css/Settings.css */
+
+/* Genel Stil ve Çekmece (Drawer) */
+.settings-drawer {
+    padding: 24px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 16px 0 0 16px;
+    width: 380px;
+    box-sizing: border-box;
+}
+
+/* Koyu tema için stiller */
+.settings-drawer.dark {
+    background: rgba(30, 30, 30, 0.7);
+    color: #e0e0e0;
+}
+
+/* Açık tema için stiller */
+.settings-drawer.light {
+    background: rgba(255, 255, 255, 0.9);
+    color: #23272f;
+}
+
+/* Çekmecenin iç içeriği */
+.settings-drawer-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Başlık bölümü */
+.settings-drawer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+}
+
+/* Tema bazlı kenarlık rengi */
+.settings-drawer.dark .settings-drawer-header,
+.settings-drawer.dark .settings-section {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.settings-drawer.light .settings-drawer-header,
+.settings-drawer.light .settings-section {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.settings-title {
+    color: inherit;
+    font-size: 1.7rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.drawer-close-btn {
+    color: inherit;
+    transition: color 0.2s;
+}
+
+.drawer-close-btn:hover {
+    color: #4f8cff;
+}
+
+/* Ayar bölümleri */
+.settings-section {
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+}
+
+.settings-section:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.section-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0 0 16px 0;
+    color: inherit;
+}
+
+/* Form stilleri */
+.settings-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Tema bazlı label rengi */
+.settings-drawer.dark .form-group label {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 8px;
+}
+
+.settings-drawer.light .form-group label {
+    color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 8px;
+}
+
+/* Input stilleri */
+.styled-input {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.2s;
+}
+
+/* Koyu tema input stilleri */
+.settings-drawer.dark .styled-input {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.settings-drawer.dark .styled-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.settings-drawer.dark .styled-input:focus {
+    border-color: #4f8cff;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Açık tema input stilleri */
+.settings-drawer.light .styled-input {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.05);
+    color: #23272f;
+}
+
+.settings-drawer.light .styled-input::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.settings-drawer.light .styled-input:focus {
+    border-color: #4f8cff;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/* TAMAMEN GÜNCELLENMİŞ SELECT BOX STİLLERİ */
+.settings-select {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: none !important;
+    position: relative;
+    padding-right: 32px; /* Ok için yer aç */
+}
+
+/* Özel ok ikonu */
+.settings-select::after {
+    content: "▼";
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 12px;
+    transition: color 0.2s;
+}
+
+.settings-drawer.dark .settings-select {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.settings-drawer.dark .settings-select::after {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.settings-drawer.light .settings-select {
+    color: #23272f;
+    background-color: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.settings-drawer.light .settings-select::after {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+/* Select box seçenekleri */
+.settings-select option {
+    background-color: inherit;
+    color: inherit;
+}
+
+.settings-drawer.dark .settings-select option {
+    background-color: rgba(30, 30, 30, 0.9);
+    color: #e0e0e0;
+}
+
+.settings-drawer.light .settings-select option {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #23272f;
+}
+
+/* Radio butonları */
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 8px;
+}
+
+.radio-label input[type="radio"] {
+    accent-color: #4f8cff;
+    cursor: pointer;
+}
+
+/* Şifre input stilleri */
+.password-input-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+.password-input-wrapper .styled-input {
+    padding-right: 40px;
+}
+
+/* Tema bazlı göz ikonu rengi */
+.settings-drawer.dark .password-input-wrapper span {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.settings-drawer.light .password-input-wrapper span {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.password-input-wrapper span {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+/* Buton stilleri */
+.primary-button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(90deg, #4f8cff 60%, #6c63ff 100%);
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 1px;
+}
+
+.primary-button:hover {
+    opacity: 0.9;
+    box-shadow: 0 4px 12px rgba(79, 140, 255, 0.2);
+}
+
+.logout-button {
+    background-color: #dc3545 !important;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.logout-button:hover {
+    background-color: #c82333 !important;
+}
+
+/* Toastify stil uyarlamaları */
+.Toastify__toast--dark {
+    background: rgba(50, 50, 50, 0.9);
+    color: #e0e0e0;
+}
+
+.Toastify__toast--light {
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+}

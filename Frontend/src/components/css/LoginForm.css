@@ -1,0 +1,242 @@
+.login-bg {
+    min-height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    background: linear-gradient(120deg, #002d4d, #124478, #5962af, #aab0b7, #808cb1);
+    background-size: 400% 400%;
+    animation: gradientMove 18s ease-in-out infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.login-container {
+    background: rgba(101, 98, 96, 0.5);
+    /* %50 saydam açık bej/krem */
+    padding: 48px 36px 32px 36px;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px 0 rgba(195, 196, 206, 0.18);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 380px;
+    position: relative;
+}
+
+/* Placeholder yazıları için beyaz renk */
+.login-input::placeholder {
+    color: #ffffff;
+    opacity: 1;
+}
+
+.login-avatar-wrapper {
+    position: absolute;
+    top: -56px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: transparent;
+}
+
+.login-avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    object-fit: cover;
+    background: #fff;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+}
+
+.login-title {
+    color: #fff;
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin-top: 56px;
+    margin-bottom: 28px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.login-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-input {
+    width: 100%;
+    padding: 14px 18px;
+    margin-bottom: 22px;
+    border: none;
+    border-bottom: 2px solid #aaa;
+    background: transparent;
+    color: #fff;
+    opacity: 1;
+    font-size: 1.08rem;
+    outline: none;
+    transition: border-color 0.2s;
+    font-weight: 500;
+}
+
+.login-input:focus {
+    border-bottom: 2px solid #4f8cff;
+}
+
+.login-btn {
+    width: 70%;
+    padding: 13px 0;
+    background: linear-gradient(90deg, #4f8cff 60%, #6c63ff 100%);
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 24px;
+    font-size: 1.1rem;
+    margin: 18px 0 18px 0;
+    cursor: pointer;
+    transition: background 0.2s;
+    box-shadow: 0 2px 8px rgba(34, 197, 94, 0.15);
+    letter-spacing: 1px;
+}
+
+.login-btn:hover {
+    background: linear-gradient(90deg, #4f8cff 60%, #6c63ff 100%);
+}
+
+.login-remember {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-size: 1rem;
+    gap: 8px;
+    width: 100%;
+    margin-top: 4px;
+}
+
+.login-remember input[type='checkbox'] {
+    accent-color: #4f8cff;
+    width: 16px;
+    height: 16px;
+}
+
+.login-remember label {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #fff;
+}
+
+.login-links {
+    margin-top: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.login-link {
+    color: #caced4;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.login-link:hover {
+    color: #4f8cff;
+    text-decoration: underline;
+}
+
+.login-link-separator {
+    color: #ece6e6;
+    font-size: 1.1rem;
+    margin: 0 4px;
+}
+
+.login-or {
+    margin: 22px 0 10px 0;
+    text-align: center;
+    color: #888;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.google-btn {
+    width: 100%;
+    max-width: 340px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #fff;
+    color: #222;
+    border: 1.5px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1.08rem;
+    font-weight: 500;
+    padding: 12px 0;
+    margin: 0 auto 0 auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    cursor: pointer;
+    transition: background 0.2s, border 0.2s;
+}
+
+.google-btn:hover {
+    background: #f3f4f6;
+    border: 1.5px solid #bfc3c9;
+}
+
+.google-icon {
+    display: flex;
+    align-items: center;
+    margin-right: 4px;
+}
+
+/* LoginForm.css'ye ekleyeceğiniz yeni stil */
+.password-toggle-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s;
+}
+
+.password-toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.password-toggle-icon {
+    font-size: 20px;
+    display: inline-block;
+    transition: all 0.2s;
+}
+
+.password-toggle-btn:hover .password-toggle-icon {
+    transform: scale(1.1);
+}

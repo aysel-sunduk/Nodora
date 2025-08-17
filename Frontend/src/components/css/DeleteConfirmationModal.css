@@ -1,0 +1,98 @@
+/* Bu dosya, projenizdeki 'components/css' klasörüne yerleştirilmelidir.
+   Örneğin: src/components/css/DeleteConfirmationModal.css */
+
+.modal-backdrop {
+    /* Modalın tam ekranı kaplamasını sağlar */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Arka planı karartır */
+    display: flex;
+    justify-content: center; /* Yatayda ortalar */
+    align-items: center; /* Dikeyde ortalar */
+    z-index: 1000; /* Diğer bileşenlerin üzerinde durmasını sağlar */
+    backdrop-filter: blur(5px); /* Arka planı hafifçe bulanıklaştırır */
+    -webkit-backdrop-filter: blur(5px); /* Safari desteği için */
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    transform: scale(1);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    border: 1px solid #ddd;
+    box-sizing: border-box; /* Padding'in genişliğe dahil edilmesini sağlar */
+}
+
+.modal-content.dark {
+    background-color: #2c2f33;
+    color: #e4e6eb;
+    border: 1px solid #444;
+}
+
+.modal-header-icon {
+    margin-bottom: 1rem;
+}
+
+.warning-icon {
+    font-size: 3rem;
+}
+
+.modal-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.modal-message {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+}
+
+.modal-content.dark .modal-message {
+    color: #bbb;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.modal-buttons button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.confirm-button {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.confirm-button:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+}
+
+.cancel-button {
+    background-color: #bdc3c7;
+    color: #333;
+}
+
+.cancel-button:hover {
+    background-color: #95a5a6;
+    transform: translateY(-2px);
+}

@@ -1,0 +1,37 @@
+### Build ###
+target/
+build/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+
+### Frontend ortam değişkenleri ###
+Frontend/.env*
+ 
+
+# Backend kaynak dosyaları (örneğin application.properties vs.)
+Backend/src/main/resources/
+
+

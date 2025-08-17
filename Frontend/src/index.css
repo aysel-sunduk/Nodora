@@ -1,0 +1,197 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS Değişkenleri ile Tema Tanımlaması */
+:root {
+  /* Açık Tema Varsayılanları */
+  --bg-start: #e0eafc; 
+  --bg-end: #cfdef3;
+  --bg-mid1: #c9d6ff;
+  --bg-mid2: #e2eafc;
+  --app-bg-color: #f4f6fa;
+  --app-text-color: #23272f;
+  --card-bg: rgba(255, 255, 255, 0.8);
+  --card-box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+  --button-primary-bg: linear-gradient(90deg, #4f8cff 60%, #6c63ff 100%);
+  --button-hover-bg: linear-gradient(90deg, #6c63ff 60%, #4f8cff 100%);
+  --button-shadow: 0 2px 8px rgba(0, 100, 255, 0.15);
+  --input-border: #aaa;
+  --input-placeholder: #555;
+  --input-focus-border: #4f8cff;
+  --header-bg: rgba(255, 255, 255, 0.9);
+  --scrollbar-thumb-bg: rgba(180, 180, 180, 0.6);
+  --scrollbar-thumb-hover-bg: rgba(150, 150, 150, 0.8);
+  /* Sidebar için Açık Tema renkleri */
+  --sidebar-bg: rgba(240, 248, 255, 0.7);
+  --sidebar-text: #333;
+  --sidebar-border: rgba(51, 51, 51, 0.2);
+  --sidebar-hover-bg: rgba(51, 51, 51, 0.1);
+  --sidebar-logo-bg: #8096f9;
+  --sidebar-item-bg: rgba(255, 255, 255, 0.5);
+  --sidebar-item-hover: rgba(255, 255, 255, 0.7);
+  --sidebar-boards-bg: rgba(0, 0, 0, 0.05);
+  --sidebar-board-item-bg: rgba(0, 0, 0, 0.1);
+  --sidebar-board-item-hover: rgba(0, 0, 0, 0.2);
+  --sidebar-delete-btn: rgba(51, 51, 51, 0.6);
+  --sidebar-delete-btn-hover: #333;
+}
+
+/* Koyu Tema Ayarları */
+.dark-theme {
+  --bg-start: #002d4d;
+  --bg-end: #124478;
+  --bg-mid1: #5962af;
+  --bg-mid2: #93a9c8;
+  --app-bg-color: #18191A;
+  --app-text-color: #E4E6EB;
+  --card-bg: rgba(40, 40, 60, 0.7);
+  --card-box-shadow: 0 8px 32px 0 rgba(20, 20, 30, 0.3);
+  --button-primary-bg: linear-gradient(90deg, #6c63ff 60%, #4f8cff 100%);
+  --button-hover-bg: linear-gradient(90deg, #4f8cff 60%, #6c63ff 100%);
+  --button-shadow: 0 2px 8px rgba(100, 100, 255, 0.2);
+  --input-border: #888;
+  --input-placeholder: #bbb;
+  --input-focus-border: #6c63ff;
+  --header-bg: rgba(34, 34, 59, 0.8);
+  --scrollbar-thumb-bg: rgba(80, 80, 80, 0.6);
+  --scrollbar-thumb-hover-bg: rgba(100, 100, 100, 0.8);
+  /* Sidebar için Koyu Tema renkleri */
+  --sidebar-bg: rgba(25, 25, 45, 0.9);
+  --sidebar-text: #f0f0f0;
+  --sidebar-border: rgba(255, 255, 255, 0.2);
+  --sidebar-hover-bg: rgba(255, 255, 255, 0.1);
+  --sidebar-logo-bg: #2c5364;
+  --sidebar-item-bg: rgba(255, 255, 255, 0.1);
+  --sidebar-item-hover: rgba(255, 255, 255, 0.2);
+  --sidebar-boards-bg: rgba(0, 0, 0, 0.2);
+  --sidebar-board-item-bg: rgba(0, 0, 0, 0.3);
+  --sidebar-board-item-hover: rgba(0, 0, 0, 0.4);
+  --sidebar-delete-btn: rgba(255, 255, 255, 0.6);
+  --sidebar-delete-btn-hover: #fff;
+}
+
+/* Ana sayfa arka plan ve animasyon */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  background: linear-gradient(120deg, var(--bg-start), var(--bg-end), var(--bg-mid1), var(--bg-mid2));
+  background-size: 400% 400%;
+  animation: gradientMove 18s ease-in-out infinite;
+  color: var(--app-text-color);
+  padding-bottom: 15px; 
+  background-color: var(--app-bg-color);
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Sayfa konteyner */
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+/* Kartlar */
+.card-container {
+  background: var(--card-bg);
+  padding: 32px 24px;
+  border-radius: 16px;
+  box-shadow: var(--card-box-shadow);
+  margin-bottom: 24px;
+}
+.card-container .primary-button {
+  padding: 8px 16px;
+  background: var(--button-primary-bg);
+  color: var(--text-color);
+  font-weight: bold;
+  border: none;
+  border-radius: 16px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  box-shadow: var(--button-shadow);
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+
+/* Tüm butonlara uygulanacak ana stil */
+.primary-button {
+  padding: 13px 24px;
+  background: var(--button-primary-bg);
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 24px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  box-shadow: var(--button-shadow);
+  letter-spacing: 1px;
+}
+
+.primary-button:hover {
+  background: var(--button-hover-bg);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(34,197,94,0.2);
+}
+
+/* Input alanı */
+.styled-input {
+  width: 100%;
+  padding: 14px 18px;
+  margin-bottom: 16px;
+  border: none;
+  border-bottom: 2px solid var(--input-border);
+  background: transparent;
+  color: var(--text-color);
+  font-size: 1.08rem;
+  font-weight: 500;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.styled-input:focus {
+  border-bottom-color: var(--input-focus-border);
+}
+
+.styled-input::placeholder {
+  color: var(--input-placeholder);
+}
+
+/* Header */
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  background: var(--header-bg);
+  border-radius: 0 0 16px 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Kaydırma çubuğu */
+::-webkit-scrollbar {
+  width: 8px;
+  background: rgba(224, 225, 221, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb-bg);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover-bg);
+}
+
+/* Sidebar */
+.sidebar {
+  background: var(--sidebar-bg);
+  /* Sidebar'a ait diğer ortak stiller buraya eklenebilir */
+}

@@ -1,0 +1,136 @@
+/* Card.css */
+.card-container {
+    background-color: rgb(49, 170, 122);
+    border-radius: 6px;
+    padding: 8px;
+    margin-bottom: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.card-title {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: #172b4d;
+}
+
+.delete-card-button {
+    background: none;
+    border: none;
+    color: #6b778c;
+    cursor: pointer;
+    padding: 2px;
+}
+
+.delete-card-button:hover {
+    color: #172b4d;
+}
+
+.checklists-container {
+    margin-top: 8px;
+}
+
+.checklist-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 0;
+    font-size: 13px;
+    color: #172b4d;
+}
+
+.check-box {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #dfe1e6;
+    border-radius: 3px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.check-box.checked {
+    background-color: #5aac44;
+    border-color: #5aac44;
+    color: white;
+}
+
+.check-box:hover {
+    background-color: #ebecf0;
+}
+
+.check-box.checked:hover {
+    background-color: #49852e;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: #6b778c;
+}
+
+.add-checklist-button {
+    background: none;
+    border: none;
+    color: #5e6c84;
+    padding: 4px 8px;
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    border-radius: 3px;
+    margin-top: 4px;
+}
+
+.add-checklist-button:hover {
+    background-color: rgba(9, 30, 66, 0.08);
+    color: #172b4d;
+}
+
+.add-checklist-form {
+    margin-top: 8px;
+}
+
+.add-checklist-form input {
+    width: 100%;
+    padding: 6px;
+    margin-bottom: 8px;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    font-size: 12px;
+}
+
+.form-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.add-button {
+    background-color: #5aac44;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.cancel-button {
+    background: none;
+    border: none;
+    color: #6b778c;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 0;
+}

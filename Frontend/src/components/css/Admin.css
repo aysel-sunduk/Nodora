@@ -1,0 +1,231 @@
+/* src/components/css/Admin.css */
+
+/* Genel Yönetim Paneli Düzeni */
+.admin-container {
+    display: flex;
+    height: 100vh;
+    /* Varsayılan (Koyu) Tema Gradyan ve Animasyon: Daha yumuşak, koyu renkler kullanıldı */
+    background: linear-gradient(120deg, #121e35, #1e3a6a, #3d5a80, #586b8c, #4a576a);
+    background-size: 400% 400%;
+    animation: gradientMove 18s ease-in-out infinite;
+    color: #ffffff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Açık Tema için Alternatif Gradyan ve Renkler */
+.admin-container.light {
+    /* Koyu temanın canlılığına uygun, daha havalı bir açık renk paleti */
+    background: linear-gradient(120deg, #f0f8ff, #e6f2ff, #d4e7f6, #c2daed, #b0c9e0);
+    background-size: 400% 400%;
+    animation: gradientMove 18s ease-in-out infinite;
+    color: #333333;
+}
+
+/* Sidebar Stili */
+.admin-sidebar {
+    width: 280px;
+    background-color: rgba(100, 100, 100, 0.4);
+    padding: 30px 20px;
+    box-shadow: 0 8px 32px 0 rgba(195, 196, 206, 0.18);
+    border-radius: 0 16px 16px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: background-color 0.3s, color 0.3s;
+    flex-shrink: 0;
+}
+
+/* Açık Tema Sidebar */
+.admin-container.light .admin-sidebar {
+    background-color: rgba(255, 255, 255, 0.85);
+    color: #333333;
+}
+
+/* Sidebar Başlık Stili */
+.sidebar-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.sidebar-header h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+/* Navigasyon Link Stilleri */
+.sidebar-nav {
+    flex-grow: 1;
+}
+
+.nav-link {
+    display: block;
+    padding: 15px 20px;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: 500;
+}
+
+/* Açık Tema Navigasyon Linkleri */
+.admin-container.light .nav-link {
+    color: #333333;
+}
+
+/* Hover ve Aktif Durum Stilleri */
+.nav-link:hover,
+.nav-link.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+
+/* Açık Tema Hover ve Aktif Durum Stilleri */
+.admin-container.light .nav-link:hover,
+.admin-container.light .nav-link.active {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #333333;
+}
+
+/* Ana İçerik Alanı */
+.admin-main {
+    flex-grow: 1;
+    overflow-y: auto;
+    background-color: transparent;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+/* Buton ve Başlık Alanı */
+.admin-main-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+/* Ayarlar Butonu */
+.settings-button {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.settings-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Açık Tema Ayarlar Butonu */
+.admin-container.light .settings-button {
+    color: #333333;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.admin-container.light .settings-button:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Gradyan Animasyonu */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Admin Dashboard Rapor Stilleri */
+.admin-dashboard-content {
+    padding: 20px;
+}
+
+.admin-dashboard-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+/* Rapor kartlarını içeren kapsayıcı */
+.dashboard-cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Her bir rapor kartı için stil */
+.dashboard-card {
+    background-color: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    padding: 30px;
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-bottom: 20px;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Açık Tema için Rapor Kartı Stilleri */
+.admin-container.light .dashboard-card {
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    color: #333333;
+}
+
+.admin-container.light .dashboard-card:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Kart içindeki başlık (Total Workspaces, Workspace ID vb.) */
+.dashboard-card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #c0c0c0;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Açık Tema için Kart Başlıkları */
+.admin-container.light .dashboard-card h2 {
+    color: #666666;
+}
+
+/* Kart içindeki değer (sayı, string vb.) */
+.dashboard-card p {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.2;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow: visible;
+    text-overflow: clip;
+    color: #f0f0f0;
+}
+
+/* Açık Tema için Kart Değerleri */
+.admin-container.light .dashboard-card p {
+    color: #444444;
+}
+
+/* Yükleniyor ve Hata metinleri için stiller */
+.loading-container, .error-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 1.5rem;
+    color: #ccc;
+    text-align: center;
+}

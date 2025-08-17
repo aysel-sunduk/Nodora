@@ -1,0 +1,131 @@
+/* Var olan Admin.css kodlarınız... */
+
+/* --- AdminLogViewer için stil kodları --- */
+
+.admin-logs-content {
+    padding: 2rem;
+    background-color: #f4f7f9;
+    min-height: calc(100vh - 60px);
+}
+
+.admin-dashboard-content.h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+}
+
+.log-filters {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.log-filters input[type="text"],
+.log-filters input[type="number"] {
+    padding: 10px 15px;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 200px;
+}
+
+.log-filters button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #3498db;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.log-filters button:hover {
+    background-color: #2980b9;
+}
+
+/* --- Tablo Stil Kodları --- */
+.table-container {
+    overflow-x: auto;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.log-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    font-size: 0.95rem;
+    table-layout: fixed; /* Tablo sütun genişliklerini sabitler */
+}
+
+.log-table thead {
+    background-color: #ecf0f1;
+}
+
+.log-table th, .log-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+    word-wrap: break-word; /* Uzun kelimeleri satır sonuna taşır */
+}
+
+.log-table th {
+    color: #34495e;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.log-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.log-table tbody tr:hover {
+    background-color: #f9fafb;
+}
+
+.no-logs-message {
+    text-align: center;
+    padding: 20px;
+    color: #7f8c8d;
+    font-style: italic;
+}
+
+/* --- Koyu Tema Uyumluluğu --- */
+/* Bu stiller, eğer uygulamanızda koyu tema desteği varsa uygulanabilir */
+.admin-logs-content.dark {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+}
+
+.admin-logs-content.dark .admin-dashboard-content.h1 {
+    color: #ecf0f1;
+}
+
+.admin-logs-content.dark .log-filters input {
+    background-color: #34495e;
+    border-color: #4a6572;
+    color: #ecf0f1;
+}
+
+.admin-logs-content.dark .log-table {
+    background-color: #34495e;
+    color: #ecf0f1;
+}
+
+.admin-logs-content.dark .log-table thead {
+    background-color: #2c3e50;
+}
+
+.admin-logs-content.dark .log-table th,
+.admin-logs-content.dark .log-table td {
+    border-bottom-color: #4a6572;
+}
+
+.admin-logs-content.dark .log-table tbody tr:hover {
+    background-color: #4a6572;
+}
